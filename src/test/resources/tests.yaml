@@ -1,0 +1,169 @@
+net_version:
+  request:
+    params: []
+    method: net_version
+  response:
+    result: "2018"
+net_peerCount:
+  request:
+    params: []
+    method: net_peerCount
+  response:
+    result: "0x0"
+net_listening:
+  request:
+    params: []
+    method: net_listening
+  response:
+    result: true
+eth_protocolVersion:
+  request:
+    params: []
+    method: eth_protocolVersion
+  response:
+    result: "0x42"
+eth_syncing:
+  request:
+    params: []
+    method: eth_syncing
+  response:
+    result: false
+eth_coinbase:
+  request:
+    params: []
+    method: eth_coinbase
+  response:
+    result: "0x9d27ef99cd0ae2fb6961dd1a33aa58e0cec4c1d7"
+eth_hashrate:
+  request:
+    params: []
+    method: eth_hashrate
+  response:
+    result: "0x0"
+eth_gasPrice:
+  request:
+    params: []
+    method: eth_gasPrice
+  response:
+    result: "0x3e8"
+eth_accounts:
+  request:
+    params: []
+    method: eth_accounts
+  response:
+    result: ["0x3609ce8a13b43ef5a538ed77ebceedba53a30c3c","0x9d27ef99cd0ae2fb6961dd1a33aa58e0cec4c1d7"]
+eth_blockNumber:
+  request:
+    params: []
+    method: eth_blockNumber
+  response:
+    result: "0x0"
+eth_getBalance:
+  request:
+    # TODO put 0 instead.
+    params: ["0x3609ce8a13b43ef5a538ed77ebceedba53a30c3c", "latest"]
+    method: eth_getBalance
+  response:
+    result: "0x3e8"
+eth_getStorageAt:
+  request:
+    params: ["0x3609ce8a13b43ef5a538ed77ebceedba53a30c3c", "0x0", "latest"]
+    method: eth_getStorageAt
+  response:
+    result: "0x0"
+eth_getTransactionCount:
+  request:
+    params: ["0x3609ce8a13b43ef5a538ed77ebceedba53a30c3c", "1"]
+    method: eth_getTransactionCount
+  response:
+    result: "0x0"
+eth_getBlockTransactionCountByHash:
+  request:
+    params: [""]
+    method: eth_getBlockTransactionCountByHash
+  response:
+    result: "0x0"
+eth_getBlockTransactionCountByNumber:
+  request:
+    params: [1]
+    method: eth_getBlockTransactionCountByNumber
+  response:
+    result: "0x0"
+eth_getCode:
+  request:
+    params: ["0x3609ce8a13b43ef5a538ed77ebceedba53a30c3c", "latest"]
+    method: eth_getCode
+  response:
+    result: "0x6a68656c6c6f20776f726c64600052600b6015f3"
+eth_sendRawTransaction:
+  request:
+    params: [ ]
+    method: eth_sendRawTransaction
+  response:
+    result: "0x0"
+eth_call:
+  request:
+    params: [{"from":null,"to":"0x3609ce8a13b43ef5a538ed77ebceedba53a30c3c","data":"0x"}, "latest"]
+    method: eth_call
+  response:
+    result: "0x68656c6c6f20776f726c64"
+eth_estimateGas:
+  request:
+    params: []
+    method: eth_estimateGas
+  response:
+    result: "0x0"
+eth_getBlockByHash:
+  request:
+    params: [ ]
+    method: eth_getBlockByHash
+  response:
+    result: "0x0"
+eth_getBlockByNumber:
+  request:
+    params: [ ]
+    method: eth_getBlockByNumber
+  response:
+    result: "0x0"
+eth_getTransactionByHash:
+  request:
+    params: []
+    method: eth_getTransactionByHash
+  response:
+    result: "0x0"
+eth_getTransactionByBlockHashAndIndex:
+  request:
+    params: []
+    method: eth_getTransactionByBlockHashAndIndex
+  response:
+    result: "0x0"
+eth_getTransactionByBlockNumberAndIndex:
+  request:
+    params: []
+    method: eth_getTransactionByBlockNumberAndIndex
+  response:
+    result: "0x0"
+eth_getTransactionReceipt:
+  request:
+    params: []
+    method: eth_getTransactionReceipt
+  response:
+    result: "0x0"
+eth_getUncleByBlockHashAndIndex:
+  request:
+    params: [ ]
+    method: eth_getUncleByBlockHashAndIndex
+  response:
+    result: "0x0"
+eth_getUncleByBlockNumberAndIndex:
+  request:
+    params: [ ]
+    method: eth_getUncleByBlockNumberAndIndex
+  response:
+    result: "0x0"
+eth_getLogs:
+  request:
+    params: []
+    method: eth_getLogs
+  response:
+    result: "0x0"

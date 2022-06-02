@@ -1,0 +1,50 @@
+plugins {
+  id 'com.diffplug.spotless' version '6.6.1'
+  id 'org.jetbrains.kotlin.jvm' version '1.6.10'
+}
+
+repositories {
+  mavenCentral()
+}
+
+apply plugin: 'java-library'
+apply plugin: 'org.jetbrains.kotlin.jvm'
+apply plugin: 'com.diffplug.spotless'
+
+dependencies {
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+  testImplementation 'org.junit.jupiter:junit-jupiter-params:5.8.2'
+  testImplementation 'org.apache.tuweni:tuweni-junit:2.2.0'
+
+  testImplementation 'org.apache.httpcomponents:httpclient:4.5.13'
+
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+  testImplementation 'ch.qos.logback:logback-classic:1.2.11'
+  testImplementation 'com.google.guava:guava:31.1-jre'
+  testImplementation 'org.apache.tuweni:tuweni-bytes:2.2.0'
+  testImplementation 'org.apache.tuweni:tuweni-eth:2.2.0'
+  testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
+  testImplementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.3'
+}
+
+tasks.named('test') {
+  useJUnitPlatform()
+}
+
+spotless {
+  groovyGradle {
+    target '**/*.gradle'
+    greclipse().configFile(rootProject.file('gradle/greclipse-gradle-style.properties'))
+    endWithNewline()
+  }
+  java {
+    target project.fileTree(project.projectDir) {
+      include '**/*.java'
+    }
+    removeUnusedImports()
+    eclipse().configFile(rootProject.file('gradle/eclipse-java-style.xml'))
+    importOrder 'org.apache', 'java', ''
+    endWithNewline()
+  }
+}
